@@ -2,6 +2,7 @@ package com.example.rvpractice
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 data class Person(val name: String, val age: Int)
@@ -22,7 +23,9 @@ class MainActivity : AppCompatActivity() {
         // 5. Create a RecyclerView.Adapter and ViewHolder to render the item
         val rvContacts = findViewById<RecyclerView>(R.id.rvContacts)
         rvContacts.adapter = ContactsAdapter(this, contacts)
+
         // 6. Bind the adapter to the data source to populate the RecyclerView
+        rvContacts.layoutManager = LinearLayoutManager(this)
 
 
     }
